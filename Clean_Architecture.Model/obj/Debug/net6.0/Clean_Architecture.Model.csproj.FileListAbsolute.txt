@@ -1,0 +1,14 @@
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\bin\Debug\net6.0\Clean_Architecture.Model.deps.json
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\bin\Debug\net6.0\Clean_Architecture.Model.runtimeconfig.json
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\bin\Debug\net6.0\Clean_Architecture.Model.dll
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\bin\Debug\net6.0\Clean_Architecture.Model.pdb
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\obj\Debug\net6.0\Clean_Architecture.Model.csproj.AssemblyReference.cache
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\obj\Debug\net6.0\Clean_Architecture.Model.GeneratedMSBuildEditorConfig.editorconfig
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\obj\Debug\net6.0\Clean_Architecture.Model.AssemblyInfoInputs.cache
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\obj\Debug\net6.0\Clean_Architecture.Model.AssemblyInfo.cs
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\obj\Debug\net6.0\Clean_Architecture.Model.csproj.CoreCompileInputs.cache
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\obj\Debug\net6.0\Clean_Architecture.Model.dll
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\obj\Debug\net6.0\refint\Clean_Architecture.Model.dll
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\obj\Debug\net6.0\Clean_Architecture.Model.pdb
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\obj\Debug\net6.0\Clean_Architecture.Model.genruntimeconfig.cache
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Model\obj\Debug\net6.0\ref\Clean_Architecture.Model.dll

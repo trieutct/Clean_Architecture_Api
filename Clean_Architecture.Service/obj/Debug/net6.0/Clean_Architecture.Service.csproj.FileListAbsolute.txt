@@ -1,0 +1,17 @@
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\bin\Debug\net6.0\Clean_Architecture.Service.deps.json
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\bin\Debug\net6.0\Clean_Architecture.Service.dll
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\bin\Debug\net6.0\Clean_Architecture.Service.pdb
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\bin\Debug\net6.0\Clean_Architecture.Model.dll
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\bin\Debug\net6.0\Clean_Architecture.Repository.dll
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\bin\Debug\net6.0\Clean_Architecture.Model.pdb
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\bin\Debug\net6.0\Clean_Architecture.Repository.pdb
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\obj\Debug\net6.0\Clean_Architecture.Service.csproj.AssemblyReference.cache
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\obj\Debug\net6.0\Clean_Architecture.Service.GeneratedMSBuildEditorConfig.editorconfig
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\obj\Debug\net6.0\Clean_Architecture.Service.AssemblyInfoInputs.cache
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\obj\Debug\net6.0\Clean_Architecture.Service.AssemblyInfo.cs
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\obj\Debug\net6.0\Clean_Architecture.Service.csproj.CoreCompileInputs.cache
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\obj\Debug\net6.0\Clean_Architecture.Service.csproj.CopyComplete
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\obj\Debug\net6.0\Clean_Architecture.Service.dll
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\obj\Debug\net6.0\refint\Clean_Architecture.Service.dll
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\obj\Debug\net6.0\Clean_Architecture.Service.pdb
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Service\obj\Debug\net6.0\ref\Clean_Architecture.Service.dll

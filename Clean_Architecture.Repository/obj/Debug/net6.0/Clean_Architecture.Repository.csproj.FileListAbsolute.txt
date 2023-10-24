@@ -1,0 +1,15 @@
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\bin\Debug\net6.0\Clean_Architecture.Repository.deps.json
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\bin\Debug\net6.0\Clean_Architecture.Repository.dll
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\bin\Debug\net6.0\Clean_Architecture.Repository.pdb
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\bin\Debug\net6.0\Clean_Architecture.Model.dll
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\bin\Debug\net6.0\Clean_Architecture.Model.pdb
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\obj\Debug\net6.0\Clean_Architecture.Repository.csproj.AssemblyReference.cache
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\obj\Debug\net6.0\Clean_Architecture.Repository.GeneratedMSBuildEditorConfig.editorconfig
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\obj\Debug\net6.0\Clean_Architecture.Repository.AssemblyInfoInputs.cache
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\obj\Debug\net6.0\Clean_Architecture.Repository.AssemblyInfo.cs
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\obj\Debug\net6.0\Clean_Architecture.Repository.csproj.CoreCompileInputs.cache
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\obj\Debug\net6.0\Clean_Architecture.Repository.csproj.CopyComplete
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\obj\Debug\net6.0\Clean_Architecture.Repository.dll
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\obj\Debug\net6.0\refint\Clean_Architecture.Repository.dll
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\obj\Debug\net6.0\Clean_Architecture.Repository.pdb
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Repository\obj\Debug\net6.0\ref\Clean_Architecture.Repository.dll
