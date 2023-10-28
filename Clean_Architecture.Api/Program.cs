@@ -1,7 +1,8 @@
-using Clean_Architecture.Model.Entities;
+﻿using Clean_Architecture.Model.Entities;
 using Clean_Architecture.Model.Mapping;
 using Clean_Architecture.Repository;
 using Clean_Architecture.Service.Category;
+using Clean_Architecture.Service.Product;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
 
@@ -25,6 +26,7 @@ builder.Services.AddDbContext<ShopDbContext>(option =>
 option.UseSqlServer(builder.Configuration.GetConnectionString("Myconn")));
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 var app = builder.Build();
 app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 // Configure the HTTP request pipeline.

@@ -10,6 +10,9 @@ namespace Clean_Architecture.Model.Entities
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
+        public string ProductImage { get;set; }
+        public string Description { get; set; }
+        public long Price { get; set; }
         public virtual Category Category { get; set; }
     }
 }

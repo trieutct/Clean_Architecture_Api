@@ -20,9 +20,19 @@ namespace Clean_Architecture.Api.Controllers.CategoryController
             return Ok(_categoryService.Search(key));
         }
         [HttpGet]
-        public IActionResult GetCategories()
+        public IActionResult GetCategories([FromQuery] int page)
         {
-            return Ok(_categoryService.GetAll());
+            int begin;
+            if (page<=1)
+            {
+                begin = 0;
+            }
+            else
+            {
+                begin = (page * 10) - 10;
+            }    
+            return Ok(_categoryService.GetAll().Skip(begin).Take(10));
+            //return Ok(_categoryService.GetAll());
         }
         [HttpGet("{id}")]
         public IActionResult GetCategoriesById(int id)
