@@ -32,7 +32,7 @@ namespace Clean_Architecture.Api.Controllers.ProductController
         }
 
         [HttpPost]
-        public IActionResult PostProduct([FromBody]ProductVM product)
+        public IActionResult PostProduct([FromForm]ProductVM product)
         {
             //if (_productService.Add(category))
             //{
