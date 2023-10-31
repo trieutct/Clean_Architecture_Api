@@ -78,3 +78,4 @@ H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architectur
 H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
 H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Api\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+H:\Trieu\Nam_4\Ki1\Lap_Trinh_Web1\BaiTapLon\Clean_Architecture\Clean_Architecture.Api\bin\Debug\net6.0\CloudinaryDotNet.dll

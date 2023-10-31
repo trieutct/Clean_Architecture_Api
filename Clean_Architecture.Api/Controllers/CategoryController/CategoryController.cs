@@ -22,6 +22,10 @@ namespace Clean_Architecture.Api.Controllers.CategoryController
         [HttpGet]
         public IActionResult GetCategories([FromQuery] int page)
         {
+            if(page==-1)
+            {
+                return Ok(_categoryService.GetAll());
+            }
             int begin;
             if (page<=1)
             {
