@@ -1,10 +1,12 @@
 ﻿using Clean_Architecture.Model.Dto.Category;
 using Clean_Architecture.Service.Category;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Clean_Architecture.Api.Controllers.CategoryController
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoryController : ControllerBase
