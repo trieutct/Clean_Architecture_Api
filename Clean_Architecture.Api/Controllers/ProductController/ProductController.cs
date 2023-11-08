@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Clean_Architecture.Model.Entities;
 using Clean_Architecture.Model.Dto.Product;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Clean_Architecture.Api.Controllers.ProductController
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
@@ -34,7 +36,6 @@ namespace Clean_Architecture.Api.Controllers.ProductController
             return Ok(_productService.GetAll().Skip(begin).Take(10));
             //return Ok(_categoryService.GetAll());
         }
-
         [HttpPost]
         public IActionResult PostProduct([FromForm] ProductVM product)
         {
@@ -47,20 +48,16 @@ namespace Clean_Architecture.Api.Controllers.ProductController
                 ProductImage = "",
                 CategoryId = int.Parse(product.CategoryId),
             };
-
-
             var cloudinary = new Cloudinary(new Account("dbnr304ms", "337989117255642", "YPMNJzY1UjhFz20QC2_kr8mfqr0"));
             int productId = _productService.GetAll().ToList().Count == 0 ? 0 : _productService.GetAll().Max(x => x.ProductId);
             var uploadParams = new ImageUploadParams()
             {
                 File = new FileDescription(product.file.FileName, product.file.OpenReadStream()),
-
                 PublicId = "ProductId_" + (productId + 1).ToString()
             };
             var uploadResult = cloudinary.Upload(uploadParams);
             cloudinary.Api.UrlImgUp.Transform(new Transformation().Width(100).Height(150).Crop("fill")).BuildUrl("olympic_flag");
             var imageUrl = uploadResult.SecureUrl.ToString();
-
             productdto.ProductImage = imageUrl;
 
 
@@ -70,8 +67,6 @@ namespace Clean_Architecture.Api.Controllers.ProductController
             }
             return Ok("Danh mục sản phẩm đã tồn tại");
         }
-
-
         [HttpPut("{id}")]
         public IActionResult PutCategory([FromForm] ProductVM product)
         {

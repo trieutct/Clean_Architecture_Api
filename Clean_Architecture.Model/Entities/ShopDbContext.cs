@@ -15,5 +15,6 @@ namespace Clean_Architecture.Model.Entities
         }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<AccountClient> AccountClients { get; set; }
     }
 }
