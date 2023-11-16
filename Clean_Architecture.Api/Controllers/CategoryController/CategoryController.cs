@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Clean_Architecture.Api.Controllers.CategoryController
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoryController : ControllerBase

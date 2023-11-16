@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Clean_Architecture.Repository
 {
-    public class GenericRepository<T>:IGenericRepository<T> where T : class,new ()
+    public class GenericRepository<T> : IGenericRepository<T> where T : class, new()
     {
         private readonly ShopDbContext _context;
         DbSet<T> _dbSet;
@@ -37,11 +37,17 @@ namespace Clean_Architecture.Repository
         }
         public bool Update(T entity)
         {
-            if (!_dbSet.Any(e => e == entity))
+            var entry = _context.Entry(entity);
+            if (entry.State == EntityState.Detached)
             {
-                return false;
+                var existingEntity = _dbSet.Find(GetKeyValues(entity).ToArray());
+                if (existingEntity == null)
+                {
+                    return false;
+                }
+                _context.Entry(existingEntity).CurrentValues.SetValues(entity);
             }
-            _context.Entry(entity).State = EntityState.Modified;
+            //_context.Entry(entity).State = EntityState.Modified;
             try
             {
                 _context.SaveChanges();
@@ -51,6 +57,14 @@ namespace Clean_Architecture.Repository
                 throw;
             }
             return true;
+        }
+        private IEnumerable<object> GetKeyValues(T entity)
+        {
+            var keyProperties = _context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties;
+            foreach (var property in keyProperties)
+            {
+                yield return property.PropertyInfo.GetValue(entity);
+            }
         }
         public bool Delete(int id)
         {

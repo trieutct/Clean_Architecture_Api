@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Clean_Architecture.Api.Controllers.ProductController
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
@@ -31,9 +30,15 @@ namespace Clean_Architecture.Api.Controllers.ProductController
             }
             else
             {
-                begin = (page * 10) - 10;
+                begin = (page * 10) - 9;
             }
-            return Ok(_productService.GetAll().Skip(begin).Take(10));
+            return Ok(_productService.GetAll().Skip(begin).Take(9));
+            //return Ok(_categoryService.GetAll());
+        }
+        [HttpGet("UserGetProduct")]
+        public IActionResult UserGetProduct()
+        {
+            return Ok(_productService.GetAll().Skip(0).Take(12));
             //return Ok(_categoryService.GetAll());
         }
         [HttpPost]
