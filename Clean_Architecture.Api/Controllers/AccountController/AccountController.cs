@@ -63,7 +63,7 @@ namespace Clean_Architecture.Api.Controllers.AccountController
                     UserId= accountClient.Id
                 });
             }
-            return Unauthorized();
+            return BadRequest("Sai tài khoản mật khẩu");
         }
         [HttpPost("singup")]
         public IActionResult SingUp([FromForm] Singup singup)
