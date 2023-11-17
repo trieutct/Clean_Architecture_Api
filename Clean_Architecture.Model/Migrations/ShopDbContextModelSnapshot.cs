@@ -55,7 +55,7 @@ namespace Clean_Architecture.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AccountClients");
+                    b.ToTable("AccountClient", (string)null);
                 });
 
             modelBuilder.Entity("Clean_Architecture.Model.Entities.Category", b =>
@@ -72,7 +72,30 @@ namespace Clean_Architecture.Model.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Category", (string)null);
+                });
+
+            modelBuilder.Entity("Clean_Architecture.Model.Entities.FavoriteProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("FavoriteProduct", (string)null);
                 });
 
             modelBuilder.Entity("Clean_Architecture.Model.Entities.Product", b =>
@@ -105,7 +128,26 @@ namespace Clean_Architecture.Model.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Product", (string)null);
+                });
+
+            modelBuilder.Entity("Clean_Architecture.Model.Entities.FavoriteProduct", b =>
+                {
+                    b.HasOne("Clean_Architecture.Model.Entities.Product", "Product")
+                        .WithMany("FavoriteProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Clean_Architecture.Model.Entities.AccountClient", "AccountClient")
+                        .WithMany("FavoriteProducts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AccountClient");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Clean_Architecture.Model.Entities.Product", b =>
@@ -119,9 +161,19 @@ namespace Clean_Architecture.Model.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("Clean_Architecture.Model.Entities.AccountClient", b =>
+                {
+                    b.Navigation("FavoriteProducts");
+                });
+
             modelBuilder.Entity("Clean_Architecture.Model.Entities.Category", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Clean_Architecture.Model.Entities.Product", b =>
+                {
+                    b.Navigation("FavoriteProducts");
                 });
 #pragma warning restore 612, 618
         }

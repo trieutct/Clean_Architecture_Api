@@ -15,5 +15,6 @@ namespace Clean_Architecture.Model.Entities
         public long Price { get; set; }
         public int CategoryId { get; set; }
         public virtual Category? Category { get; set; }
+        public virtual IEnumerable<FavoriteProduct> FavoriteProducts { get; set; }
     }
 }
