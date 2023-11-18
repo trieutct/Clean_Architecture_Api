@@ -9,6 +9,7 @@ namespace Clean_Architecture.Service.Cart
 {
     public interface ICartService
     {
+        IEnumerable<CartDetail> getCartsByUserId(int userId);
         IEnumerable<CartDto> GetAll();
         CartDto GetById(int id);
         bool Add(CartDto CartDto);

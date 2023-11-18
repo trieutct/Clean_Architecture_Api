@@ -52,7 +52,7 @@ namespace Clean_Architecture.Api.Controllers.AccountController
                 (
                       issuer: _configuration["Jwt:Issuer"],
                       audience: _configuration["Jwt:Audience"],
-                      expires: DateTime.Now.AddMinutes(5),
+                      expires: DateTime.Now.AddMinutes(10),
                       signingCredentials: signingCredential,
                       claims: claims
                 );

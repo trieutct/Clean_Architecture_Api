@@ -1,10 +1,12 @@
 ﻿using Clean_Architecture.Model.Dto.FavoriteProduct;
 using Clean_Architecture.Service.FavoriteProduct;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Clean_Architecture.Api.Controllers.FavoriteProductController
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class FavoriteProductController : ControllerBase

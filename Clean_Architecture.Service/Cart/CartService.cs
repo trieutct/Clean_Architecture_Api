@@ -12,13 +12,37 @@ namespace Clean_Architecture.Service.Cart
     public class CartService:ICartService
     {
         private readonly IGenericRepository<Clean_Architecture.Model.Entities.Cart> _repository;
+        private readonly IGenericRepository<Clean_Architecture.Model.Entities.AccountClient> _accountClientRepository;
+        private readonly IGenericRepository<Clean_Architecture.Model.Entities.Product> _productRepository;
         private readonly IMapper _mapper;
-        public CartService(IGenericRepository<Clean_Architecture.Model.Entities.Cart> repository, IMapper mapper)
+        public CartService(
+            IGenericRepository<Clean_Architecture.Model.Entities.Cart> repository,
+            IGenericRepository<Clean_Architecture.Model.Entities.AccountClient> accountClient,
+            IGenericRepository<Clean_Architecture.Model.Entities.Product> product,
+            IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
+            _accountClientRepository= accountClient;
+            _productRepository = product;
         }
-       
+        public IEnumerable<CartDetail> getCartsByUserId(int userId)
+        {
+            var query = from AccountClienttbl in _accountClientRepository.GetAll().Where(x => x.Id == userId).ToList()
+                        join Carttbl in _repository.GetAll().Where(x => x.UserId == userId).ToList() on AccountClienttbl.Id equals Carttbl.UserId
+                        join Producttbl in _productRepository.GetAll() on Carttbl.ProductId equals Producttbl.ProductId
+                        select new CartDetail
+                        {
+                            Image=Producttbl.ProductImage,
+                            Price=Producttbl.Price,
+                            ProductId=Producttbl.ProductId,
+                            ProductName=Producttbl.ProductName,
+                            Quantity= Carttbl.Quantity,
+                            UserId=userId,
+                            CartId= Carttbl.Id
+                        };
+            return query.ToList();
+        }
         public bool Add(CartDto category)
         {
             return _repository.Add(_mapper.Map<Clean_Architecture.Model.Entities.Cart>(category));
