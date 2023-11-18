@@ -64,8 +64,6 @@ namespace Clean_Architecture.Api.Controllers.ProductController
             cloudinary.Api.UrlImgUp.Transform(new Transformation().Width(100).Height(150).Crop("fill")).BuildUrl("olympic_flag");
             var imageUrl = uploadResult.SecureUrl.ToString();
             productdto.ProductImage = imageUrl;
-
-
             if (_productService.Add(productdto))
             {
                 return CreatedAtAction("GetProductById", new { id = productdto.ProductId }, productdto);

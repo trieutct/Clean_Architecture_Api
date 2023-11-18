@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Clean_Architecture.Model.Dto.AccountClient;
 using Clean_Architecture.Model.Dto.Category;
+using Clean_Architecture.Model.Dto.FavoriteProduct;
 using Clean_Architecture.Model.Dto.Product;
 using Clean_Architecture.Model.Entities;
 using System;
@@ -18,6 +19,7 @@ namespace Clean_Architecture.Model.Mapping
             CreateMap<Category, CategoryDto>().ReverseMap();
             CreateMap<Product, ProductDto>().ReverseMap();
             CreateMap<AccountClient, AccountClientDto>().ReverseMap();
+            CreateMap<FavoriteProduct, FavoriteProductDto>().ReverseMap();
         }
 
     }
