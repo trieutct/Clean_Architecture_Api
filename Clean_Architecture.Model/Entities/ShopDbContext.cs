@@ -17,6 +17,7 @@ namespace Clean_Architecture.Model.Entities
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<AccountClient> AccountClients { get; set; }
         public virtual DbSet<FavoriteProduct> FavoriteProducts { get; set; }
+        public virtual DbSet<Cart> Carts { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>(e =>
@@ -40,6 +41,13 @@ namespace Clean_Architecture.Model.Entities
                 e.HasKey(p => p.Id);
                 e.HasOne(p => p.Product).WithMany(fr=>fr.FavoriteProducts).HasForeignKey(p => p.ProductId);
                 e.HasOne(u => u.AccountClient).WithMany(fr => fr.FavoriteProducts).HasForeignKey(u => u.UserId);
+            });
+            modelBuilder.Entity<Cart>(e =>
+            {
+                e.ToTable("Cart");
+                e.HasKey(p => p.Id);
+                e.HasOne(c => c.Product).WithMany(p => p.Carts).HasForeignKey(p => p.ProductId);
+                e.HasOne(u => u.AccountClient).WithMany(fr => fr.Carts).HasForeignKey(u => u.UserId);
             });
         }
     }

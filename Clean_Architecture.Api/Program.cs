@@ -2,6 +2,7 @@
 using Clean_Architecture.Model.Mapping;
 using Clean_Architecture.Repository;
 using Clean_Architecture.Service.AccountClient;
+using Clean_Architecture.Service.Cart;
 using Clean_Architecture.Service.Category;
 using Clean_Architecture.Service.FavoriteProduct;
 using Clean_Architecture.Service.Product;
@@ -64,6 +65,7 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IAccountClientService, AccountClientService>();
 builder.Services.AddScoped<IFavoriteProductService, FavoriteProductService>();
+builder.Services.AddScoped<ICartService, CartService>();
 
 
 

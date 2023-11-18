@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Clean_Architecture.Model.Migrations
 {
     [DbContext(typeof(ShopDbContext))]
-    [Migration("20231117153917_sjdjsd")]
-    partial class sjdjsd
+    [Migration("20231118132909_add-carts")]
+    partial class addcarts
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

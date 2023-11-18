@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Clean_Architecture.Model.Entities
 {
-    public class FavoriteProduct
+    public class Cart
     {
         public int Id { get; set; }
+        public int Quantity { get; set; }
         public int UserId { get; set; }
         [ForeignKey("Id")]
         public AccountClient AccountClient { get; set; }

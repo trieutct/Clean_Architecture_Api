@@ -58,6 +58,32 @@ namespace Clean_Architecture.Model.Migrations
                     b.ToTable("AccountClient", (string)null);
                 });
 
+            modelBuilder.Entity("Clean_Architecture.Model.Entities.Cart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Cart", (string)null);
+                });
+
             modelBuilder.Entity("Clean_Architecture.Model.Entities.Category", b =>
                 {
                     b.Property<int>("CategoryId")
@@ -131,6 +157,25 @@ namespace Clean_Architecture.Model.Migrations
                     b.ToTable("Product", (string)null);
                 });
 
+            modelBuilder.Entity("Clean_Architecture.Model.Entities.Cart", b =>
+                {
+                    b.HasOne("Clean_Architecture.Model.Entities.Product", "Product")
+                        .WithMany("Carts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Clean_Architecture.Model.Entities.AccountClient", "AccountClient")
+                        .WithMany("Carts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AccountClient");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Clean_Architecture.Model.Entities.FavoriteProduct", b =>
                 {
                     b.HasOne("Clean_Architecture.Model.Entities.Product", "Product")
@@ -163,6 +208,8 @@ namespace Clean_Architecture.Model.Migrations
 
             modelBuilder.Entity("Clean_Architecture.Model.Entities.AccountClient", b =>
                 {
+                    b.Navigation("Carts");
+
                     b.Navigation("FavoriteProducts");
                 });
 
@@ -173,6 +220,8 @@ namespace Clean_Architecture.Model.Migrations
 
             modelBuilder.Entity("Clean_Architecture.Model.Entities.Product", b =>
                 {
+                    b.Navigation("Carts");
+
                     b.Navigation("FavoriteProducts");
                 });
 #pragma warning restore 612, 618
