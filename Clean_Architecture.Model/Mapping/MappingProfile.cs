@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Clean_Architecture.Model.Dto.Order;
+using Clean_Architecture.Model.Dto.OrderDetail;
 
 namespace Clean_Architecture.Model.Mapping
 {
@@ -22,7 +24,8 @@ namespace Clean_Architecture.Model.Mapping
             CreateMap<AccountClient, AccountClientDto>().ReverseMap();
             CreateMap<FavoriteProduct, FavoriteProductDto>().ReverseMap();
             CreateMap<Cart, CartDto>().ReverseMap();
+            CreateMap<Order, OrderDto>().ReverseMap();
+            CreateMap<OrderDetail, OrderDetailDto>().ReverseMap();
         }
-
     }
 }

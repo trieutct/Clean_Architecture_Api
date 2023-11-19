@@ -5,6 +5,8 @@ using Clean_Architecture.Service.AccountClient;
 using Clean_Architecture.Service.Cart;
 using Clean_Architecture.Service.Category;
 using Clean_Architecture.Service.FavoriteProduct;
+using Clean_Architecture.Service.Order;
+using Clean_Architecture.Service.OrderDetail;
 using Clean_Architecture.Service.Product;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -66,6 +68,8 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IAccountClientService, AccountClientService>();
 builder.Services.AddScoped<IFavoriteProductService, FavoriteProductService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IOrderDetailService, OrderDetailService>();
 
 
 

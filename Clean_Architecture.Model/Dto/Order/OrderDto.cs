@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Clean_Architecture.Model.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clean_Architecture.Model.Entities
+namespace Clean_Architecture.Model.Dto.Order
 {
-    public class Order
+    public class OrderDto
     {
         public int Id { get; set; }
         public string NguoiNhan { get; set; }
@@ -15,6 +16,5 @@ namespace Clean_Architecture.Model.Entities
         public long Total { get; set; }
         public DateTime NgayDat { get; set; }
         public int TrangThai { get; set; }
-        public virtual IEnumerable<OrderDetail> OrderDetails { get; set; }
     }
 }
