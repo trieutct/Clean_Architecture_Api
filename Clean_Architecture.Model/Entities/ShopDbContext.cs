@@ -18,6 +18,8 @@ namespace Clean_Architecture.Model.Entities
         public virtual DbSet<AccountClient> AccountClients { get; set; }
         public virtual DbSet<FavoriteProduct> FavoriteProducts { get; set; }
         public virtual DbSet<Cart> Carts { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>(e =>
@@ -48,6 +50,19 @@ namespace Clean_Architecture.Model.Entities
                 e.HasKey(p => p.Id);
                 e.HasOne(c => c.Product).WithMany(p => p.Carts).HasForeignKey(p => p.ProductId);
                 e.HasOne(u => u.AccountClient).WithMany(fr => fr.Carts).HasForeignKey(u => u.UserId);
+            });
+            modelBuilder.Entity<Order>(e =>
+            {
+                e.ToTable("Order");
+                e.HasKey(p => p.Id);
+            });
+            modelBuilder.Entity<OrderDetail>(e =>
+            {
+                e.ToTable("OrderDetail");
+                e.HasKey(p => p.Id);
+                e.HasOne(c => c.Order).WithMany(p => p.OrderDetails).HasForeignKey(p => p.OderId);
+                e.HasOne(u => u.AccountClient).WithMany(fr => fr.OrderDetails).HasForeignKey(u => u.UserId);
+                e.HasOne(u => u.Product).WithMany(fr => fr.OrderDetails).HasForeignKey(u => u.ProductId);
             });
         }
     }

@@ -17,5 +17,6 @@ namespace Clean_Architecture.Model.Entities
         public string Password { get; set; }
         public virtual IEnumerable<FavoriteProduct> FavoriteProducts { get; set; }
         public virtual IEnumerable<Cart> Carts { get; set; }
+        public virtual IEnumerable<OrderDetail> OrderDetails { get; set; }
     }
 }

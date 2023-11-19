@@ -66,6 +66,14 @@ namespace Clean_Architecture.Api.Controllers.CartController
                 return NoContent();
             return BadRequest();
         }
-
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            if(_cartService.Delete(id))
+            {
+                return NoContent();
+            }
+            return BadRequest();
+        }
     }
 }
