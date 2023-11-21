@@ -32,6 +32,10 @@ namespace Clean_Architecture.Service.Order
         {
             return _mapper.Map<List<OrderDto>>(_repository.GetAll().OrderByDescending(x => x.Id));
         }
+        public IEnumerable<OrderDto> GetAllDonHangCanDuyet()
+        {
+            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x=>x.TrangThai==0));
+        }
         public OrderDto GetById(int id)
         {
             return _mapper.Map<OrderDto>(_repository.GetbyId(id));

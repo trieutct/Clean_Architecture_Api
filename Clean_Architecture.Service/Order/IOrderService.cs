@@ -10,6 +10,7 @@ namespace Clean_Architecture.Service.Order
     public interface IOrderService
     {
         IEnumerable<OrderDto> GetAll();
+        IEnumerable<OrderDto> GetAllDonHangCanDuyet();
         OrderDto GetById(int id);
         bool Add(OrderDto OrderDto);
         bool Update(OrderDto OrderDto);
