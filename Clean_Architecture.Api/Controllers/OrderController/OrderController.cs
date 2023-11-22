@@ -37,7 +37,8 @@ namespace Clean_Architecture.Api.Controllers.OrderController
                 Phone = model.Phone,
                 Total = model.Total,
                 TrangThai = 0,
-                NgayDat = DateTime.Now
+                NgayDat = DateTime.Now,
+                UserId=model.UserId,
             };
             if (_orderService.Add(oderDto))
             {
@@ -56,7 +57,6 @@ namespace Clean_Architecture.Api.Controllers.OrderController
                             Price = _productService.GetById(_cartService.GetById(i).ProductId).Price,
                             ProductId = _cartService.GetById(i).ProductId,
                             Quantity = _cartService.GetById(i).Quantity,
-                            UserId = _cartService.GetById(i).UserId,
                         };
                         if (!_orderDetaiService.Add(orderdetail))
                             return BadRequest();
@@ -70,6 +70,11 @@ namespace Clean_Architecture.Api.Controllers.OrderController
             {
                 return BadRequest();
             }
+        }
+        [HttpGet]
+        public IActionResult getOrderbyUserId(int id)
+        {
+            return Ok(_orderService.getOrderbyUserId(id));
         }
     }
 }

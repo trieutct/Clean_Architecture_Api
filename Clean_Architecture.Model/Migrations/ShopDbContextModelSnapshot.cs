@@ -154,7 +154,12 @@ namespace Clean_Architecture.Model.Migrations
                     b.Property<int>("TrangThai")
                         .HasColumnType("int");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Order", (string)null);
                 });
@@ -179,16 +184,11 @@ namespace Clean_Architecture.Model.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("OderId");
 
                     b.HasIndex("ProductId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("OrderDetail", (string)null);
                 });
@@ -264,6 +264,17 @@ namespace Clean_Architecture.Model.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Clean_Architecture.Model.Entities.Order", b =>
+                {
+                    b.HasOne("Clean_Architecture.Model.Entities.AccountClient", "AccountClient")
+                        .WithMany("Orders")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AccountClient");
+                });
+
             modelBuilder.Entity("Clean_Architecture.Model.Entities.OrderDetail", b =>
                 {
                     b.HasOne("Clean_Architecture.Model.Entities.Order", "Order")
@@ -277,14 +288,6 @@ namespace Clean_Architecture.Model.Migrations
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("Clean_Architecture.Model.Entities.AccountClient", "AccountClient")
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AccountClient");
 
                     b.Navigation("Order");
 
@@ -308,7 +311,7 @@ namespace Clean_Architecture.Model.Migrations
 
                     b.Navigation("FavoriteProducts");
 
-                    b.Navigation("OrderDetails");
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("Clean_Architecture.Model.Entities.Category", b =>

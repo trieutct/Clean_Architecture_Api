@@ -16,5 +16,7 @@ namespace Clean_Architecture.Model.Dto.Order
         public long Total { get; set; }
         public DateTime NgayDat { get; set; }
         public int TrangThai { get; set; }
+        public int UserId { get; set; }
+
     }
 }

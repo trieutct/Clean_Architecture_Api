@@ -15,9 +15,6 @@ namespace Clean_Architecture.Model.Entities
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
-        public int UserId { get; set; }
-        [ForeignKey("Id")]
-        public virtual AccountClient AccountClient { get; set; }
         public int OderId { get; set; }
         [ForeignKey("Id")]
         public virtual Order Order { get; set; }

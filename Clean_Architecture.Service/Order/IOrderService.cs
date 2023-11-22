@@ -15,5 +15,6 @@ namespace Clean_Architecture.Service.Order
         bool Add(OrderDto OrderDto);
         bool Update(OrderDto OrderDto);
         bool Delete(int id);
+        IEnumerable<OrderDto> getOrderbyUserId(int iduser);
     }
 }

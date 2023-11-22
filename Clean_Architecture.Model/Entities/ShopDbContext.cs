@@ -55,13 +55,13 @@ namespace Clean_Architecture.Model.Entities
             {
                 e.ToTable("Order");
                 e.HasKey(p => p.Id);
+                e.HasOne(u => u.AccountClient).WithMany(fr => fr.Orders).HasForeignKey(u => u.UserId);
             });
             modelBuilder.Entity<OrderDetail>(e =>
             {
                 e.ToTable("OrderDetail");
                 e.HasKey(p => p.Id);
                 e.HasOne(c => c.Order).WithMany(p => p.OrderDetails).HasForeignKey(p => p.OderId);
-                e.HasOne(u => u.AccountClient).WithMany(fr => fr.OrderDetails).HasForeignKey(u => u.UserId);
                 e.HasOne(u => u.Product).WithMany(fr => fr.OrderDetails).HasForeignKey(u => u.ProductId);
             });
         }

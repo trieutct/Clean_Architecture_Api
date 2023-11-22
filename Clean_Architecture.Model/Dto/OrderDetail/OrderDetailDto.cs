@@ -13,7 +13,6 @@ namespace Clean_Architecture.Model.Dto.OrderDetail
         public int Quantity { get; set; }
         public long Price { get; set; }
         public int ProductId { get; set; }
-        public int UserId { get; set; }
         public int OderId { get; set; }
     }
 }
