@@ -10,7 +10,7 @@ namespace Clean_Architecture.Service.OrderDetail
     public interface IOrderDetailService
     {
         IEnumerable<OrderDetailDto> GetAll();
-        OrderDetailDto GetById(int id);
+        IEnumerable<OrderDetailDto> GetById(int id);
         bool Add(OrderDetailDto OrderDetailDto);
         bool Update(OrderDetailDto OrderDetailDto);
         bool Delete(int id);
