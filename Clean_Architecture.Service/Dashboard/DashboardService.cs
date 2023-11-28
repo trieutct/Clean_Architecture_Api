@@ -42,6 +42,22 @@ namespace Clean_Architecture.Service.Dashboard
         {
             return _OrderService.GetAllDonHangCanDuyet();
         }
+        public IEnumerable<OrderDto> getDonHangDangChuanBi()
+        {
+            return _OrderService.GetAllDonHangDangChuanBi();
+        }
+        public IEnumerable<OrderDto> getDonHangDangGiao()
+        {
+            return _OrderService.GetAllDonHangDangGiao();
+        }
+        public IEnumerable<OrderDto> getDonHangHoanThanh()
+        {
+            return _OrderService.GetAllDonHangHoanThanh();
+        }
+        public IEnumerable<OrderDto> getDonHangHuy()
+        {
+            return _OrderService.GetAllDonHangHuy();
+        }
         public bool DuyetDonHang(int id)
         {
             var find=_OrderService.GetById(id);
@@ -49,6 +65,15 @@ namespace Clean_Architecture.Service.Dashboard
                 return false;
             find.TrangThai = 1;
             if(!_OrderService.Update(find)) return false;
+            return true;
+        }
+        public bool setDonHangDangGiao(int id)
+        {
+            var find = _OrderService.GetById(id);
+            if (find == null)
+                return false;
+            find.TrangThai = 2;
+            if (!_OrderService.Update(find)) return false;
             return true;
         }
         public DoanhThuTheoTuan getDoanhThuTheoTuan()

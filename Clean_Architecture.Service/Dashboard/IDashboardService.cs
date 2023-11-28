@@ -13,7 +13,12 @@ namespace Clean_Architecture.Service.Dashboard
         public long getTotalProduct();
         public long getTotalOrder();
         public IEnumerable<OrderDto> getDonHangCanDuyet();
+        public IEnumerable<OrderDto> getDonHangDangChuanBi();
+        public IEnumerable<OrderDto> getDonHangDangGiao();
+        public IEnumerable<OrderDto> getDonHangHoanThanh();
+        public IEnumerable<OrderDto> getDonHangHuy();
         public bool DuyetDonHang(int id);
+        public bool setDonHangDangGiao(int id);
         public DoanhThuTheoTuan getDoanhThuTheoTuan();
 
     }

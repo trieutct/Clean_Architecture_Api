@@ -43,6 +43,22 @@ namespace Clean_Architecture.Service.Order
         {
             return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x=>x.TrangThai==0));
         }
+        public IEnumerable<OrderDto> GetAllDonHangDangChuanBi()
+        {
+            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.TrangThai == 1));
+        }
+        public IEnumerable<OrderDto> GetAllDonHangDangGiao()
+        {
+            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.TrangThai == 2));
+        }
+        public IEnumerable<OrderDto> GetAllDonHangHoanThanh()
+        {
+            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.TrangThai == 3));
+        }
+        public IEnumerable<OrderDto> GetAllDonHangHuy()
+        {
+            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.TrangThai == -1));
+        }
         public OrderDto GetById(int id)
         {
             return _mapper.Map<OrderDto>(_repository.GetbyId(id));

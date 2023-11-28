@@ -11,6 +11,10 @@ namespace Clean_Architecture.Service.Order
     {
         IEnumerable<OrderDto> GetAll();
         IEnumerable<OrderDto> GetAllDonHangCanDuyet();
+        IEnumerable<OrderDto> GetAllDonHangDangChuanBi();
+        IEnumerable<OrderDto> GetAllDonHangDangGiao();
+        IEnumerable<OrderDto> GetAllDonHangHoanThanh();
+        IEnumerable<OrderDto> GetAllDonHangHuy();
         OrderDto GetById(int id);
         bool Add(OrderDto OrderDto);
         bool Update(OrderDto OrderDto);
