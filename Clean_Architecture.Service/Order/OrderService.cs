@@ -41,23 +41,23 @@ namespace Clean_Architecture.Service.Order
         }
         public IEnumerable<OrderDto> GetAllDonHangCanDuyet()
         {
-            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x=>x.TrangThai==0));
+            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x=>x.TrangThai==0)).OrderByDescending(x=>x.Id);
         }
         public IEnumerable<OrderDto> GetAllDonHangDangChuanBi()
         {
-            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.TrangThai == 1));
+            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.TrangThai == 1)).OrderByDescending(x => x.Id);
         }
         public IEnumerable<OrderDto> GetAllDonHangDangGiao()
         {
-            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.TrangThai == 2));
+            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.TrangThai == 2)).OrderByDescending(x => x.Id);
         }
         public IEnumerable<OrderDto> GetAllDonHangHoanThanh()
         {
-            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.TrangThai == 3));
+            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.TrangThai == 3)).OrderByDescending(x => x.Id);
         }
         public IEnumerable<OrderDto> GetAllDonHangHuy()
         {
-            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.TrangThai == -1));
+            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.TrangThai == -1)).OrderByDescending(x => x.Id);
         }
         public OrderDto GetById(int id)
         {
@@ -70,7 +70,7 @@ namespace Clean_Architecture.Service.Order
         }
         public IEnumerable<OrderDto> getOrderbyUserId(int userId)
         {
-            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.UserId == userId).OrderByDescending(x => x.UserId).ToList());
+            return _mapper.Map<List<OrderDto>>(_repository.GetAll().Where(x => x.UserId == userId).OrderByDescending(x => x.Id).ToList());
         }
     }
 }

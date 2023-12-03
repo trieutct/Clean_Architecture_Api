@@ -31,7 +31,6 @@ namespace Clean_Architecture.Api.Controllers.AccountController
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginClient loginClient)
         {
-
             var accountClient = _accountClientService.GetAll().FirstOrDefault(X => X.Username.Equals(loginClient.Username) && X.Password.Equals(maHoaMatKhau(loginClient.Password)));
             if (accountClient != null)
             {
@@ -52,7 +51,7 @@ namespace Clean_Architecture.Api.Controllers.AccountController
                 (
                       issuer: _configuration["Jwt:Issuer"],
                       audience: _configuration["Jwt:Audience"],
-                      expires: DateTime.Now.AddMinutes(10),
+                      expires: DateTime.Now.AddMilliseconds(30),
                       signingCredentials: signingCredential,
                       claims: claims
                 );

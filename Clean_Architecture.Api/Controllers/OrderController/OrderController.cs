@@ -76,5 +76,16 @@ namespace Clean_Architecture.Api.Controllers.OrderController
         {
             return Ok(_orderService.getOrderbyUserId(id));
         }
+        [HttpGet("DaNhanDonHang")]
+        public IActionResult confirmDaNhanDonHang(int id)
+        {
+            var order = _orderService.GetById(id);
+            if (order == null)
+                return BadRequest();
+            order.TrangThai = 3;
+            if(_orderService.Update(order))
+                return Ok();
+            return BadRequest();
+        }
     }
 }
