@@ -41,6 +41,11 @@ namespace Clean_Architecture.Api.Controllers.ProductController
             return Ok(_productService.GetAll().Skip(0).Take(12));
             //return Ok(_categoryService.GetAll());
         }
+        [HttpGet("getProductByCategoryId")]
+        public IActionResult getProductByCategoryId(int id)
+        {
+            return Ok(_productService.GetAll().Where(x=>x.CategoryId==id).ToList());
+        }
         [HttpPost]
         public IActionResult PostProduct([FromForm] ProductVM product)
         {
