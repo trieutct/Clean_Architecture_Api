@@ -12,6 +12,7 @@ using Clean_Architecture.Model.Entities;
 using AutoMapper;
 using System.Security.Cryptography;
 using System;
+using Clean_Architecture.Model.Dto.Category;
 
 namespace Clean_Architecture.Api.Controllers.AccountController
 {
@@ -27,6 +28,34 @@ namespace Clean_Architecture.Api.Controllers.AccountController
             _accountClientService = accountClientService;
             _configuration = configuration;
             _mapper = mapper;
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetAccount(int id)
+        {
+            var ac = _accountClientService.GetById(id);
+            if (ac == null)
+            {
+                return NotFound();
+            }
+            return Ok(ac);
+        }
+        [HttpPut("{id}")]
+        public IActionResult PutAccount(DoiProfile profile)
+        {
+            var find = _accountClientService.GetById(profile.Id);
+            if (find == null)
+            {
+                return BadRequest();
+            }    
+            find.Fullname = profile.Fullname;
+            find.Address = profile.Address;
+            find.Age= profile.Age;
+            find.Phone = profile.Phone;
+            if (_accountClientService.Update(find))
+            {
+                return Ok("Cập nhật profile thành công");
+            }
+            return BadRequest();
         }
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginClient loginClient)
@@ -125,6 +154,25 @@ namespace Clean_Architecture.Api.Controllers.AccountController
                 return BadRequest(ex.Message);
             }
         }
+        [HttpGet("DoiMatKhau2")]
+        public IActionResult DoiMatKhau2(int UserId,string PassCu,string PassNew)
+        {
+            var find = _accountClientService.GetById(UserId);
+            if(find==null)
+            {
+                return BadRequest();
+            }    
+            if(!find.Password.Equals(maHoaMatKhau(PassCu)))
+            {
+                return BadRequest("Mật khẩu cũ không đúng");
+            }
+            find.Password = maHoaMatKhau(PassNew);
+            if(_accountClientService.Update(find))
+            {
+                return Ok("Đổi mật khẩu thành công");
+            }
+            return BadRequest();
+        }
         [HttpPost("DoiMatKhau")]  
         public IActionResult DoiMatKhau(DoiMatKhau model)
         {
@@ -133,16 +181,6 @@ namespace Clean_Architecture.Api.Controllers.AccountController
             {
                 return BadRequest("tài khoản ko có");
             }
-            //var acountClinet = new AccountClientDto()
-            //{
-            //    Username = acoount.Username,
-            //    Address = acoount.Address,
-            //    Age = acoount.Age,
-            //    Fullname = acoount.Fullname,
-            //    Phone = acoount.Phone,
-            //    Password = model.NewPass,
-            //    Id= acoount.Id,
-            //}; 
             acoount.Password = maHoaMatKhau(model.NewPass);
             if (_accountClientService.Update(acoount))
             {
