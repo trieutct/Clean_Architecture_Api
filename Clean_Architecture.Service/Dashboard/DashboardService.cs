@@ -79,12 +79,8 @@ namespace Clean_Architecture.Service.Dashboard
         public DoanhThuTheoTuan getDoanhThuTheoTuan()
         {
             DateTime currentDate = DateTime.Now;
-
             DateTime startOfWeek = currentDate.Date.AddDays(-(int)currentDate.DayOfWeek);
-
             DoanhThuTheoTuan doanhThuTuan = new DoanhThuTheoTuan();
-
-
             for (int i = 0; i < 7; i++)
             {
                 DateTime currentDay = startOfWeek.AddDays(i);
@@ -119,8 +115,41 @@ namespace Clean_Architecture.Service.Dashboard
                         break;
                 }
             }
-
             return doanhThuTuan;
         }
+        public IEnumerable<SoLuongTheoTrangThaiDonHang> getSoLuongDonHangTheoTrangThai()
+        {
+            var TrangThaiDonHangList = _orderrepository.GetAll().Select(x => x.TrangThai).Distinct();
+            var ketqua=new List<SoLuongTheoTrangThaiDonHang>();
+            foreach(var item in TrangThaiDonHangList)
+            {
+                var tentrangthai = "";
+                switch (item)
+                {
+                    case -1:
+                        tentrangthai = "Hủy";
+                        break;
+                    case 0:
+                        tentrangthai = "Chờ duyệt";
+                        break;
+                    case 1:
+                        tentrangthai = "Đang chuẩn bị";
+                        break;
+                    case 2:
+                        tentrangthai = "Đang giao";
+                        break;
+                    case 3:
+                        tentrangthai = "Hoàn thành";
+                        break;
+                }
+                var soluong = _orderrepository.GetAll().Count(x => x.TrangThai == item);
+                ketqua.Add(new SoLuongTheoTrangThaiDonHang
+                {
+                    TenTrangThai = tentrangthai,
+                    Value = soluong
+                });
+            }
+            return ketqua;
+        }    
     }
 }

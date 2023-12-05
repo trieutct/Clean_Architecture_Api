@@ -20,6 +20,7 @@ namespace Clean_Architecture.Service.Dashboard
         public bool DuyetDonHang(int id);
         public bool setDonHangDangGiao(int id);
         public DoanhThuTheoTuan getDoanhThuTheoTuan();
+        public IEnumerable<SoLuongTheoTrangThaiDonHang> getSoLuongDonHangTheoTrangThai();
 
     }
 }

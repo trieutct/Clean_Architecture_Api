@@ -79,5 +79,10 @@ namespace Clean_Architecture.Api.Controllers.DashBoardController
         {
             return Ok(_DashboardService.getDoanhThuTheoTuan());
         }
+        [HttpGet("getSoLuongDonHangTheoTrangThai")]
+        public IActionResult getSoLuongDonHangTheoTrangThai()
+        {
+            return Ok(_DashboardService.getSoLuongDonHangTheoTrangThai());
+        }
     }
 }
