@@ -41,6 +41,12 @@ namespace Clean_Architecture.Api.Controllers.ProductController
             return Ok(_productService.GetAll().Skip(0).Take(12));
             //return Ok(_categoryService.GetAll());
         }
+        [HttpGet("getAll")]
+        public IActionResult getAll()
+        {
+            return Ok(_productService.GetAll());
+            //return Ok(_categoryService.GetAll());
+        }
         [HttpGet("getProductByCategoryId")]
         public IActionResult getProductByCategoryId(int id)
         {

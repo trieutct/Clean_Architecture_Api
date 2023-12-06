@@ -87,5 +87,16 @@ namespace Clean_Architecture.Api.Controllers.OrderController
                 return Ok();
             return BadRequest();
         }
+        [HttpGet("HuyDon")]
+        public IActionResult HuyDon(int id)
+        {
+            var order = _orderService.GetById(id);
+            if (order == null)
+                return BadRequest();
+            order.TrangThai = -1;
+            if (_orderService.Update(order))
+                return Ok();
+            return BadRequest();
+        }
     }
 }
